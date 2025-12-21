@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+    このファイルはテンプレートです。
+
+    実際の使用方法:
+    1. Cloudinaryアカウントを作成（https://cloudinary.com/）
+    2. Dashboard から以下の情報を取得:
+       - Cloud Name
+       - API Key
+       - API Secret
+    3. Settings > Upload > Upload Presets で unsigned upload preset を作成
+    4. このテンプレートをコピーして Cloudinary-Config.plist を作成
+    5. 以下の値を実際の値に置き換える
+
+    注意: このファイルは .gitignore に追加してコミットしないこと
+    -->
+
+    <key>CLOUDINARY_CLOUD_NAME</key>
+    <string>YOUR_CLOUD_NAME</string>
+
+    <key>CLOUDINARY_API_KEY</key>
+    <string>YOUR_API_KEY</string>
+
+    <key>CLOUDINARY_API_SECRET</key>
+    <string>YOUR_API_SECRET</string>
+
+    <key>CLOUDINARY_UPLOAD_PRESET</key>
+    <string>YOUR_UPLOAD_PRESET</string>
+</dict>
+</plist>

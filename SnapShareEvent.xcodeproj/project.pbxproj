@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01F551BAA06CF4F3EB86511A /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55708DC2A949321E36733ABF /* CameraPreview.swift */; };
+		0FCA0CD129E7194889B9DE22 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C80B5D0B8ECE7D2607BB7 /* CameraViewModel.swift */; };
+		13BF2794010314DCC3AEDC23 /* setup.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6EDDED18C596F4D26E51D8D5 /* setup.sh */; };
+		258AEBF932607F91B7854AE9 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C9A1248CB5A283B26B4989 /* CameraService.swift */; };
+		26E352135E4F1E1DAB00BE6E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31BB1578B3E200BB26608E /* CameraView.swift */; };
+		34543BC5BC7B6468FED0451B /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDC7A030DA375713C0D680 /* MemoryViewModel.swift */; };
+		34741CD11C2C025B5A68B476 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE680303B3576E14B50878 /* FirebaseManager.swift */; };
+		3E4E15DFC3FA641CFC737A7F /* CloudinaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05438F0113744F6E3B70FD92 /* CloudinaryService.swift */; };
+		478BE98BF96278DBB77B9D29 /* SnapShareEvent.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 769D9A282FBEDF4E4B897430 /* SnapShareEvent.xcodeproj */; };
+		4979DADB34F7D47DFF1E9C39 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209F61F12E7638FCFE0302CC /* User.swift */; };
+		56BF12F7790E12B3274752A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993637BB8FE1F1EC6AF37AD9 /* Assets.xcassets */; };
+		576F0D831737C16F7FEA3EBA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A929D3AF2D148227C072CC /* MainViewModel.swift */; };
+		5A32C3D09B4854A87FEA289F /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DC07A4662736C340D50E81 /* UserDefaultsKeys.swift */; };
+		5DA446B097AE0C0B81DF08F0 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE67A4F8A5FD94DCEA3D5C /* QRCodeView.swift */; };
+		6B51D8492E2AAD5C062BBAB0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5220BC56D2468245226A221 /* MainView.swift */; };
+		7E3800176D4625366897CFFA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D6DC5BADCB1C98720ABC7A52 /* SDWebImageSwiftUI */; };
+		8CBBFBBDACBA2958D1D4C2F5 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DB139FCE4AFBB0A1B53647 /* Group.swift */; };
+		92413CED299AFAE995C0FFE0 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 90B8E27E0E0F6358332F606E /* Cloudinary */; };
+		A36953B3E76F3FCD62D36C9A /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E326A77C047E913566C1F56 /* MemoryView.swift */; };
+		A4A5AC014BC13CB1E877809E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990ADB76B75A8E41AE86AF3A /* OnboardingView.swift */; };
+		AD399DF0FABAD6A448E50291 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 649BC41763E8495A9B1AD468 /* FirebaseFirestore */; };
+		B2585E847480913EC4B198E2 /* SnapShareEventApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2623D621B68A4F39F56D2 /* SnapShareEventApp.swift */; };
+		B40ADF9DDE33457D8C744B60 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 36BDD612D1B061230651ED8B /* FirebaseAuth */; };
+		B8B2C4DA3D6E739F2C83AADF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D3664C937F4EB7689DD07D /* OnboardingViewModel.swift */; };
+		B9A70D4BE6922D6D0FB44E1A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84078F281FA7DA602502681C /* Constants.swift */; };
+		BC7795F50C79A56BC5E37E7D /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E9753526351F43B5E2A041 /* ImageProcessor.swift */; };
+		BD5A96E9D43E7B5F63917FEF /* QRCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF88E19C53F6067774A6F299 /* QRCodeService.swift */; };
+		C1D2B8108BA244F2EB47E815 /* CloudinaryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7681DA6F96D643B993D88292 /* CloudinaryConfig.swift */; };
+		DCD98CCDF5157F13A151A96B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D898323FCE6DB424217039AC /* GoogleService-Info.plist */; };
+		E39B83D66FC8DAF3CF1AB607 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B14E7D69B3C81834045608E /* Photo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02AE680303B3576E14B50878 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		05438F0113744F6E3B70FD92 /* CloudinaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryService.swift; sourceTree = "<group>"; };
+		16A929D3AF2D148227C072CC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		17DC07A4662736C340D50E81 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		1C31BB1578B3E200BB26608E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		209F61F12E7638FCFE0302CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		275C80B5D0B8ECE7D2607BB7 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		2B14E7D69B3C81834045608E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		2CDDC7A030DA375713C0D680 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
+		55708DC2A949321E36733ABF /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		6E326A77C047E913566C1F56 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		6EDDED18C596F4D26E51D8D5 /* setup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
+		729F6D5FF1F547DCA770F659 /* SnapShareEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapShareEvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7681DA6F96D643B993D88292 /* CloudinaryConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryConfig.swift; sourceTree = "<group>"; };
+		769D9A282FBEDF4E4B897430 /* SnapShareEvent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SnapShareEvent.xcodeproj; sourceTree = "<group>"; };
+		84078F281FA7DA602502681C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		94C9A1248CB5A283B26B4989 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		990ADB76B75A8E41AE86AF3A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		993637BB8FE1F1EC6AF37AD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7DB139FCE4AFBB0A1B53647 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		A7EE67A4F8A5FD94DCEA3D5C /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		C5B2623D621B68A4F39F56D2 /* SnapShareEventApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShareEventApp.swift; sourceTree = "<group>"; };
+		C5E9753526351F43B5E2A041 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		C6D3664C937F4EB7689DD07D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		D5220BC56D2468245226A221 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D64E1B5197288C752801C5B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D898323FCE6DB424217039AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF88E19C53F6067774A6F299 /* QRCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9B358C4EEB520D99FF2AB8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40ADF9DDE33457D8C744B60 /* FirebaseAuth in Frameworks */,
+				AD399DF0FABAD6A448E50291 /* FirebaseFirestore in Frameworks */,
+				7E3800176D4625366897CFFA /* SDWebImageSwiftUI in Frameworks */,
+				92413CED299AFAE995C0FFE0 /* Cloudinary in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		056BB00E9C4229DFDA86AA7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				729F6D5FF1F547DCA770F659 /* SnapShareEvent.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1084089A53293E4E1C008B4C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D5220BC56D2468245226A221 /* MainView.swift */,
+				A7EE67A4F8A5FD94DCEA3D5C /* QRCodeView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		184EDAA43D3D56FBEFA8ADBE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				94C9A1248CB5A283B26B4989 /* CameraService.swift */,
+				05438F0113744F6E3B70FD92 /* CloudinaryService.swift */,
+				02AE680303B3576E14B50878 /* FirebaseManager.swift */,
+				C5E9753526351F43B5E2A041 /* ImageProcessor.swift */,
+				EF88E19C53F6067774A6F299 /* QRCodeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		18BEB13CA2D518D64E77CF4A = {
+			isa = PBXGroup;
+			children = (
+				EDA028B1D82468BA037D6E27 /* Models */,
+				184EDAA43D3D56FBEFA8ADBE /* Services */,
+				676E28F7EB2F7581F4BEFBA2 /* SnapShareEvent */,
+				FDC610656093633C453775C2 /* Utilities */,
+				C2B82390B72A4B541F29EAFA /* ViewModels */,
+				4383B19C65F17BEDB4DBE882 /* Views */,
+				056BB00E9C4229DFDA86AA7D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		195C5F0FCE06A7F05AE9AB6F /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				6E326A77C047E913566C1F56 /* MemoryView.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		4383B19C65F17BEDB4DBE882 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E367697E7989C0B343E7BB2 /* Camera */,
+				1084089A53293E4E1C008B4C /* Main */,
+				195C5F0FCE06A7F05AE9AB6F /* Memory */,
+				FEE069C3A41B7A53243FBF98 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		676E28F7EB2F7581F4BEFBA2 /* SnapShareEvent */ = {
+			isa = PBXGroup;
+			children = (
+				993637BB8FE1F1EC6AF37AD9 /* Assets.xcassets */,
+				D64E1B5197288C752801C5B7 /* Info.plist */,
+				6EDDED18C596F4D26E51D8D5 /* setup.sh */,
+				D898323FCE6DB424217039AC /* GoogleService-Info.plist */,
+				769D9A282FBEDF4E4B897430 /* SnapShareEvent.xcodeproj */,
+				C5B2623D621B68A4F39F56D2 /* SnapShareEventApp.swift */,
+			);
+			name = SnapShareEvent;
+			path = .;
+			sourceTree = "<group>";
+		};
+		6E367697E7989C0B343E7BB2 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				55708DC2A949321E36733ABF /* CameraPreview.swift */,
+				1C31BB1578B3E200BB26608E /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		773FC3442EF7F28200AA8FFB /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2B82390B72A4B541F29EAFA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				275C80B5D0B8ECE7D2607BB7 /* CameraViewModel.swift */,
+				16A929D3AF2D148227C072CC /* MainViewModel.swift */,
+				2CDDC7A030DA375713C0D680 /* MemoryViewModel.swift */,
+				C6D3664C937F4EB7689DD07D /* OnboardingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EDA028B1D82468BA037D6E27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7DB139FCE4AFBB0A1B53647 /* Group.swift */,
+				2B14E7D69B3C81834045608E /* Photo.swift */,
+				209F61F12E7638FCFE0302CC /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FDC610656093633C453775C2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7681DA6F96D643B993D88292 /* CloudinaryConfig.swift */,
+				84078F281FA7DA602502681C /* Constants.swift */,
+				17DC07A4662736C340D50E81 /* UserDefaultsKeys.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FEE069C3A41B7A53243FBF98 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				990ADB76B75A8E41AE86AF3A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E4D6CF46274926532D77110 /* SnapShareEvent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53A3A2D11E2A3F2AA43EF47C /* Build configuration list for PBXNativeTarget "SnapShareEvent" */;
+			buildPhases = (
+				A678CD6E3D99AD2A2F33ED32 /* Sources */,
+				66FD13DA5958FFDC52029BF4 /* Resources */,
+				B9B358C4EEB520D99FF2AB8E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapShareEvent;
+			packageProductDependencies = (
+				36BDD612D1B061230651ED8B /* FirebaseAuth */,
+				649BC41763E8495A9B1AD468 /* FirebaseFirestore */,
+				D6DC5BADCB1C98720ABC7A52 /* SDWebImageSwiftUI */,
+				90B8E27E0E0F6358332F606E /* Cloudinary */,
+			);
+			productName = SnapShareEvent;
+			productReference = 729F6D5FF1F547DCA770F659 /* SnapShareEvent.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EF32A509774B1EFBED6BDCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4E4D6CF46274926532D77110 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A1BFE867AD9BDCECB7E59894 /* Build configuration list for PBXProject "SnapShareEvent" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ja;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ja,
+			);
+			mainGroup = 18BEB13CA2D518D64E77CF4A;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EC69C767C8AC0A8B8DE9EEFB /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
+				DBA1A9ED2BDECABE7A208CF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8AB86998217F5CE993B104D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 773FC3442EF7F28200AA8FFB /* Products */;
+					ProjectRef = 769D9A282FBEDF4E4B897430 /* SnapShareEvent.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4E4D6CF46274926532D77110 /* SnapShareEvent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66FD13DA5958FFDC52029BF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56BF12F7790E12B3274752A7 /* Assets.xcassets in Resources */,
+				478BE98BF96278DBB77B9D29 /* SnapShareEvent.xcodeproj in Resources */,
+				13BF2794010314DCC3AEDC23 /* setup.sh in Resources */,
+				DCD98CCDF5157F13A151A96B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A678CD6E3D99AD2A2F33ED32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F551BAA06CF4F3EB86511A /* CameraPreview.swift in Sources */,
+				258AEBF932607F91B7854AE9 /* CameraService.swift in Sources */,
+				26E352135E4F1E1DAB00BE6E /* CameraView.swift in Sources */,
+				0FCA0CD129E7194889B9DE22 /* CameraViewModel.swift in Sources */,
+				C1D2B8108BA244F2EB47E815 /* CloudinaryConfig.swift in Sources */,
+				3E4E15DFC3FA641CFC737A7F /* CloudinaryService.swift in Sources */,
+				B9A70D4BE6922D6D0FB44E1A /* Constants.swift in Sources */,
+				34741CD11C2C025B5A68B476 /* FirebaseManager.swift in Sources */,
+				8CBBFBBDACBA2958D1D4C2F5 /* Group.swift in Sources */,
+				BC7795F50C79A56BC5E37E7D /* ImageProcessor.swift in Sources */,
+				6B51D8492E2AAD5C062BBAB0 /* MainView.swift in Sources */,
+				576F0D831737C16F7FEA3EBA /* MainViewModel.swift in Sources */,
+				A36953B3E76F3FCD62D36C9A /* MemoryView.swift in Sources */,
+				34543BC5BC7B6468FED0451B /* MemoryViewModel.swift in Sources */,
+				A4A5AC014BC13CB1E877809E /* OnboardingView.swift in Sources */,
+				B8B2C4DA3D6E739F2C83AADF /* OnboardingViewModel.swift in Sources */,
+				E39B83D66FC8DAF3CF1AB607 /* Photo.swift in Sources */,
+				BD5A96E9D43E7B5F63917FEF /* QRCodeService.swift in Sources */,
+				5DA446B097AE0C0B81DF08F0 /* QRCodeView.swift in Sources */,
+				B2585E847480913EC4B198E2 /* SnapShareEventApp.swift in Sources */,
+				4979DADB34F7D47DFF1E9C39 /* User.swift in Sources */,
+				5A32C3D09B4854A87FEA289F /* UserDefaultsKeys.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		73FD4612683C0BFD38144034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		915B12B59874CB36F8DAD45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P2VBG45Y8;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.takaoka.app;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DF6F0CFB60766C938CCAD623 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P2VBG45Y8;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.takaoka.app;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E2E16DF0071EE24BC2E3C39B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53A3A2D11E2A3F2AA43EF47C /* Build configuration list for PBXNativeTarget "SnapShareEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				915B12B59874CB36F8DAD45E /* Debug */,
+				DF6F0CFB60766C938CCAD623 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A1BFE867AD9BDCECB7E59894 /* Build configuration list for PBXProject "SnapShareEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73FD4612683C0BFD38144034 /* Debug */,
+				E2E16DF0071EE24BC2E3C39B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8AB86998217F5CE993B104D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.6;
+			};
+		};
+		DBA1A9ED2BDECABE7A208CF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.0;
+			};
+		};
+		EC69C767C8AC0A8B8DE9EEFB /* XCRemoteSwiftPackageReference "cloudinary_ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cloudinary/cloudinary_ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36BDD612D1B061230651ED8B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBA1A9ED2BDECABE7A208CF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		649BC41763E8495A9B1AD468 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBA1A9ED2BDECABE7A208CF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		90B8E27E0E0F6358332F606E /* Cloudinary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC69C767C8AC0A8B8DE9EEFB /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
+			productName = Cloudinary;
+		};
+		D6DC5BADCB1C98720ABC7A52 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AB86998217F5CE993B104D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1EF32A509774B1EFBED6BDCB /* Project object */;
+}
