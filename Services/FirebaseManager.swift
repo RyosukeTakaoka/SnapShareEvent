@@ -62,10 +62,23 @@ class FirebaseManager: ObservableObject {
 
     /// グループを作成
     func createGroup(_ group: Group) async throws -> String {
-        let docRef = try await db.collection(Constants.Firebase.groupsCollection)
-            .addDocument(data: group.toDictionary())
+        // デバッグログ
+        print("📝 [FirebaseManager] createGroup開始")
+        print("📝 [FirebaseManager] コレクション名: \(Constants.Firebase.groupsCollection)")
+        print("📝 [FirebaseManager] 認証状態: \(String(describing: auth.currentUser?.uid))")
+        print("📝 [FirebaseManager] グループデータ: \(group.toDictionary())")
 
-        return docRef.documentID
+        do {
+            let docRef = try await db.collection(Constants.Firebase.groupsCollection)
+                .addDocument(data: group.toDictionary())
+
+            print("✅ [FirebaseManager] グループ作成成功: \(docRef.documentID)")
+            return docRef.documentID
+        } catch {
+            print("❌ [FirebaseManager] グループ作成エラー: \(error)")
+            print("❌ [FirebaseManager] エラー詳細: \(error.localizedDescription)")
+            throw error
+        }
     }
 
     /// グループに参加
@@ -96,12 +109,15 @@ class FirebaseManager: ObservableObject {
 
     /// ユーザーが参加しているグループ一覧を取得
     func getUserGroups(userId: String) async throws -> [Group] {
+        // ✅ arrayContains + order by はインデックスが必要なため、order by を削除
+        // クライアント側でソートする
         let snapshot = try await db.collection(Constants.Firebase.groupsCollection)
             .whereField("memberIds", arrayContains: userId)
-            .order(by: "createdAt", descending: true)
             .getDocuments()
 
-        return snapshot.documents.compactMap { try? $0.data(as: Group.self) }
+        // ✅ クライアント側で createdAt の降順にソート
+        let groups = snapshot.documents.compactMap { try? $0.data(as: Group.self) }
+        return groups.sorted { $0.createdAt > $1.createdAt }
     }
 
     /// グループのリアルタイム監視

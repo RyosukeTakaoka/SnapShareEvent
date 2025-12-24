@@ -36,7 +36,9 @@ class OnboardingViewModel: ObservableObject {
 
         do {
             // 1. 匿名認証
+            print("🔐 [Onboarding] 匿名認証を開始")
             let userId = try await firebaseManager.signInAnonymously()
+            print("✅ [Onboarding] 匿名認証成功: \(userId)")
 
             // 2. ユーザー作成
             let user = User(
@@ -45,13 +47,17 @@ class OnboardingViewModel: ObservableObject {
                 icon: selectedIcon
             )
 
+            print("📝 [Onboarding] ユーザー作成中: \(user.name)")
             try await firebaseManager.createUser(user)
+            print("✅ [Onboarding] ユーザー作成成功")
 
             // 3. UserDefaultsに保存
             UserDefaults.standard.userId = userId
             UserDefaults.standard.userName = user.name
             UserDefaults.standard.userIcon = user.icon
             UserDefaults.standard.hasCompletedOnboarding = true
+            print("💾 [Onboarding] UserDefaultsに保存完了")
+            print("💾 [Onboarding] 保存されたuserId: \(userId)")
 
             isLoading = false
 

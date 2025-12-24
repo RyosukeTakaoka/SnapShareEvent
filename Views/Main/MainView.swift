@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var showQRCodeSheet = false
     @State private var navigateToCamera = false
     @State private var navigateToMemory = false
+    @State private var hasAppeared = false  // ✅ 複数回実行防止フラグ
 
     var body: some View {
         NavigationView {
@@ -68,7 +69,14 @@ struct MainView: View {
                 }
             }
             .task {
-                await viewModel.loadGroups()
+                // ✅ 複数回実行を防止 + 遅延ロード
+                guard !hasAppeared else { return }
+                hasAppeared = true
+
+                // ✅ UI描画を優先するため500ms遅延
+                try? await Task.sleep(nanoseconds: 500_000_000)
+
+                await viewModel.loadGroupsGradually()
             }
         }
     }

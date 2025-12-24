@@ -24,6 +24,7 @@
 		6B51D8492E2AAD5C062BBAB0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5220BC56D2468245226A221 /* MainView.swift */; };
 		7E3800176D4625366897CFFA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D6DC5BADCB1C98720ABC7A52 /* SDWebImageSwiftUI */; };
 		8CBBFBBDACBA2958D1D4C2F5 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DB139FCE4AFBB0A1B53647 /* Group.swift */; };
+		8E937D2596E9EBFCFAE7573F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38F4653D95EDBB17FE2C399D /* GoogleService-Info.plist */; };
 		92413CED299AFAE995C0FFE0 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 90B8E27E0E0F6358332F606E /* Cloudinary */; };
 		A36953B3E76F3FCD62D36C9A /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E326A77C047E913566C1F56 /* MemoryView.swift */; };
 		A4A5AC014BC13CB1E877809E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990ADB76B75A8E41AE86AF3A /* OnboardingView.swift */; };
@@ -35,7 +36,6 @@
 		BC7795F50C79A56BC5E37E7D /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E9753526351F43B5E2A041 /* ImageProcessor.swift */; };
 		BD5A96E9D43E7B5F63917FEF /* QRCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF88E19C53F6067774A6F299 /* QRCodeService.swift */; };
 		C1D2B8108BA244F2EB47E815 /* CloudinaryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7681DA6F96D643B993D88292 /* CloudinaryConfig.swift */; };
-		DCD98CCDF5157F13A151A96B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D898323FCE6DB424217039AC /* GoogleService-Info.plist */; };
 		E39B83D66FC8DAF3CF1AB607 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B14E7D69B3C81834045608E /* Photo.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,7 @@
 		275C80B5D0B8ECE7D2607BB7 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		2B14E7D69B3C81834045608E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		2CDDC7A030DA375713C0D680 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
+		38F4653D95EDBB17FE2C399D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55708DC2A949321E36733ABF /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		6E326A77C047E913566C1F56 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		6EDDED18C596F4D26E51D8D5 /* setup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		C6D3664C937F4EB7689DD07D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		D5220BC56D2468245226A221 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D64E1B5197288C752801C5B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D898323FCE6DB424217039AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF88E19C53F6067774A6F299 /* QRCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,9 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				993637BB8FE1F1EC6AF37AD9 /* Assets.xcassets */,
+				38F4653D95EDBB17FE2C399D /* GoogleService-Info.plist */,
 				D64E1B5197288C752801C5B7 /* Info.plist */,
 				6EDDED18C596F4D26E51D8D5 /* setup.sh */,
-				D898323FCE6DB424217039AC /* GoogleService-Info.plist */,
 				769D9A282FBEDF4E4B897430 /* SnapShareEvent.xcodeproj */,
 				C5B2623D621B68A4F39F56D2 /* SnapShareEventApp.swift */,
 			);
@@ -169,7 +169,7 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		773FC3442EF7F28200AA8FFB /* Products */ = {
+		77DE78AE2EFBE36900266A19 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 773FC3442EF7F28200AA8FFB /* Products */;
+					ProductGroup = 77DE78AE2EFBE36900266A19 /* Products */;
 					ProjectRef = 769D9A282FBEDF4E4B897430 /* SnapShareEvent.xcodeproj */;
 				},
 			);
@@ -288,9 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BF12F7790E12B3274752A7 /* Assets.xcassets in Resources */,
+				8E937D2596E9EBFCFAE7573F /* GoogleService-Info.plist in Resources */,
 				478BE98BF96278DBB77B9D29 /* SnapShareEvent.xcodeproj in Resources */,
 				13BF2794010314DCC3AEDC23 /* setup.sh in Resources */,
-				DCD98CCDF5157F13A151A96B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

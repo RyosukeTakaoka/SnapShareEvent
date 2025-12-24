@@ -50,28 +50,6 @@
             ReferencedContainer = "container:SnapShareEvent.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "CLOUDINARY_CLOUD_NAME"
-            value = "dw71feikq"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "CLOUDINARY_API_KEY"
-            value = "AIzaSyDKBmNReDSOjS_ZzQ1UvmyTLFEfrg-Hf9I"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "CLOUDINARY_API_SECRET"
-            value = "15Z3VNjEITEbN8ejNwRyGYH4Bs4"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "CLOUDINARY_UPLOAD_PRESET"
-            value = "&#x64ae;&#x5f71;&#x3057;&#x305f;&#x753b;&#x50cf;&#x306e;&#x6295;&#x7a3f;"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

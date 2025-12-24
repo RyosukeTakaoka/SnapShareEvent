@@ -23,12 +23,17 @@ class MainViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private var groupListeners: [String: ListenerRegistration] = [:]
 
+    // ✅ 一度だけ実行を保証するフラグ
+    private var hasLoadedGroups = false
+    private var listenersSetup = false
+    private var qrObserverSetup = false
+
     var currentUserId: String? {
         UserDefaults.standard.userId
     }
 
     init() {
-        setupQRCodeObserver()
+        // ✅ init()では何もしない：起動時の処理を最小化
     }
 
     deinit {
@@ -39,7 +44,47 @@ class MainViewModel: ObservableObject {
 
     // MARK: - Group Operations
 
-    /// グループ一覧を読み込み
+    /// ✅ 段階的にグループを読み込み（起動時のメモリスパイクを防ぐ）
+    func loadGroupsGradually() async {
+        // ✅ 既に読み込み済みなら何もしない
+        guard !hasLoadedGroups else {
+            print("⚠️ [MainViewModel] loadGroupsGradually: 既に読み込み済みのためスキップ")
+            return
+        }
+
+        guard let userId = currentUserId else { return }
+
+        hasLoadedGroups = true
+        isLoading = true
+        errorMessage = nil
+
+        do {
+            print("📝 [MainViewModel] Firestoreからグループ取得開始")
+
+            // ✅ ステップ1: データ取得のみ（リスナーは後で）
+            groups = try await firebaseManager.getUserGroups(userId: userId)
+            isLoading = false
+
+            print("✅ [MainViewModel] グループ取得完了: \(groups.count)件")
+
+            // ✅ ステップ2: 500ms待機してからリスナー設定（メモリスパイク回避）
+            try? await Task.sleep(nanoseconds: 500_000_000)
+
+            // ✅ ステップ3: リアルタイム監視を段階的に設定
+            await setupGroupListenersGradually()
+
+            // ✅ QRCodeObserverは最後に設定
+            setupQRCodeObserverOnce()
+
+        } catch {
+            isLoading = false
+            hasLoadedGroups = false  // エラー時はリトライ可能にする
+            errorMessage = "グループの読み込みに失敗しました: \(error.localizedDescription)"
+            print("❌ [MainViewModel] グループ読み込みエラー: \(error)")
+        }
+    }
+
+    /// グループ一覧を読み込み（従来版：グループ作成後などに使用）
     func loadGroups() async {
         guard let userId = currentUserId else { return }
 
@@ -50,7 +95,8 @@ class MainViewModel: ObservableObject {
             groups = try await firebaseManager.getUserGroups(userId: userId)
             isLoading = false
 
-            // リアルタイム監視を設定
+            // ✅ リスナーフラグをリセットして再設定
+            listenersSetup = false
             setupGroupListeners()
         } catch {
             isLoading = false
@@ -60,7 +106,16 @@ class MainViewModel: ObservableObject {
 
     /// 新しいグループを作成
     func createGroup() async {
-        guard let userId = currentUserId else { return }
+        // デバッグ: 認証状態を確認
+        print("🔍 [Debug] currentUserId: \(String(describing: currentUserId))")
+        print("🔍 [Debug] Firebase Auth currentUser: \(String(describing: firebaseManager.currentUserId))")
+
+        guard let userId = currentUserId else {
+            errorMessage = "ユーザーIDが取得できません。再度ログインしてください。"
+            print("❌ [Error] currentUserId is nil")
+            return
+        }
+
         guard !newGroupName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             errorMessage = "グループ名を入力してください"
             return
@@ -76,7 +131,11 @@ class MainViewModel: ObservableObject {
                 memberIds: [userId]
             )
 
+            print("📝 [Debug] グループを作成中: \(group.name)")
+            print("📝 [Debug] createdBy: \(userId)")
+
             let groupId = try await firebaseManager.createGroup(group)
+            print("✅ [Debug] グループ作成成功: \(groupId)")
             group.id = groupId
 
             // UserDefaultsに保存
@@ -149,7 +208,16 @@ class MainViewModel: ObservableObject {
 
     // MARK: - QR Code
 
-    private func setupQRCodeObserver() {
+    /// ✅ QRCodeObserverを一度だけ設定
+    private func setupQRCodeObserverOnce() {
+        guard !qrObserverSetup else {
+            print("⚠️ [MainViewModel] QRCodeObserver: 既に設定済みのためスキップ")
+            return
+        }
+
+        qrObserverSetup = true
+        print("📝 [MainViewModel] QRCodeObserver設定")
+
         qrCodeService.$scannedCode
             .compactMap { $0 }
             .sink { [weak self] qrString in
@@ -158,6 +226,10 @@ class MainViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+    }
+
+    private func setupQRCodeObserver() {
+        setupQRCodeObserverOnce()
     }
 
     func getQRCodeService() -> QRCodeService {
@@ -186,6 +258,45 @@ class MainViewModel: ObservableObject {
 
             groupListeners[groupId] = listener
         }
+    }
+
+    /// ✅ リスナーを段階的に設定（起動時のメモリスパイク回避）
+    private func setupGroupListenersGradually() async {
+        // ✅ 既に設定済みなら何もしない
+        guard !listenersSetup else {
+            print("⚠️ [MainViewModel] GroupListeners: 既に設定済みのためスキップ")
+            return
+        }
+
+        listenersSetup = true
+        print("📝 [MainViewModel] GroupListeners設定開始")
+
+        // 既存のリスナーを削除
+        removeAllListeners()
+
+        // ✅ 各グループのリスナーを順次設定（200msずつ遅延）
+        for (index, group) in groups.enumerated() {
+            guard let groupId = group.id else { continue }
+
+            print("📝 [MainViewModel] Listener設定中: \(index + 1)/\(groups.count)")
+
+            let listener = firebaseManager.observeGroup(groupId: groupId) { [weak self] updatedGroup in
+                guard let self = self, let updatedGroup = updatedGroup else { return }
+
+                Task { @MainActor in
+                    if let index = self.groups.firstIndex(where: { $0.id == groupId }) {
+                        self.groups[index] = updatedGroup
+                    }
+                }
+            }
+
+            groupListeners[groupId] = listener
+
+            // ✅ 次のリスナー設定まで200ms待機（同時実行を避ける）
+            try? await Task.sleep(nanoseconds: 200_000_000)
+        }
+
+        print("✅ [MainViewModel] GroupListeners設定完了: \(groupListeners.count)件")
     }
 
     private func removeAllListeners() {
